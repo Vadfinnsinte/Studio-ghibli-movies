@@ -23,9 +23,13 @@ header {
         margin-bottom: 1em;
         background-color: rgb(115, 115, 190);
         color: rgb(29, 28, 28);
+        font-size: 16px;
         font-weight: 600;
         border: none;
         border-radius: 2em;
+    }
+    input {
+        font-size: 15px;
     }
     button:hover {
         box-shadow:  3px 3px 3px black;

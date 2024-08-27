@@ -23,18 +23,18 @@ const RenderMovies = () => {
         }
     }
     
-    const filteredMovies: apiData[] = movies.filter(movie => movie.title.toLowerCase().includes(searchFilter.toLowerCase()))
+    const filteredMovies: apiData[] = movies.filter(movie => movie.title.toLowerCase().includes(searchFilter.toLowerCase())).sort((a, b) => parseInt(b.release_date) - parseInt(a.release_date))
     
-    const sortedMovies = movies.sort((a, b) => {
-        return parseInt(b.release_date) - parseInt(a.release_date);
-    });
-    
+
     
     return (
         
         <>
         <div className='get-search'>
         <button onClick={handleGetMovies} >Get movies!</button>
+        {errorMessage && (
+					<p> {errorMessage} </p>
+				)}
      { isActive &&  <input type='test' placeholder='SEARCH' onChange={(event) => setSearchFilter(event.target.value)}/>} 
         </div>
         <section className='card-layout'>
