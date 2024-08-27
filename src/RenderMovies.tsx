@@ -11,6 +11,7 @@ const RenderMovies = () => {
     const [errorMessage,setErrorMessage] = useState<string>("")
     const [searchFilter, setSearchFilter] = useState<string>('')
     const [isActive, setIsActive] = useState<boolean>(false)
+    const [isFavorite, setIsFavorite] = useState<boolean>(false)
     
     const handleGetMovies = async () => {
         try {
@@ -32,6 +33,7 @@ const RenderMovies = () => {
         <>
         <div className='get-search'>
         <button onClick={handleGetMovies} >Get movies!</button>
+        <p className='favorite'> My favorites 💜</p>
         {errorMessage && (
 					<p> {errorMessage} </p>
 				)}
@@ -40,6 +42,8 @@ const RenderMovies = () => {
         <section className='card-layout'>
         {movies && filteredMovies.map((movie) => 
             <div className='movie-card' key={movie.id}>
+                {isFavorite ? (<p className='favorite'>💜</p>): (<p className='favorite'>🖤</p>)}
+            
             <h2>{movie.title}</h2>
             <p className='small-p'>Directed by:</p>
             <h3>{movie.director}</h3>
