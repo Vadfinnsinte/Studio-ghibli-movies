@@ -10,6 +10,11 @@ const  favorites = useVaribleStore(state => state.favorites)
 
     return (
         <>
+
+        <h1>Your favorite movies! </h1>
+        <section className='card-layout'>
+
+
         {favorites && favorites.map((movie) =>
             <div className='movie-card' key={movie.id}> <h2>{movie.title}</h2>
             <p className='small-p'>Directed by:</p>
@@ -20,6 +25,7 @@ const  favorites = useVaribleStore(state => state.favorites)
             </div>
 
         )}
+        </section>
 </>
     )
 }

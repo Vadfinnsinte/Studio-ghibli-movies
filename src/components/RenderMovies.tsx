@@ -6,6 +6,7 @@ import { apiData } from '../models/apiModel'
 import MovieCards from './MovieCards'
 import { NavLink } from 'react-router-dom'
 import { useVaribleStore } from '../data/store'
+import Favorites from './Favorites'
 
 
 const RenderMovies = () => {
@@ -40,7 +41,7 @@ const RenderMovies = () => {
         <div className='get-search'>
         <button onClick={handleGetMovies} >Get movies!</button>
         <NavLink className='favorite' to="/favorites"> My favorites 💜 </NavLink>
-        {/* <p className='favorite'> My favorites 💜</p> */}
+     
 
         {errorMessage && (<p> {errorMessage} </p>)}
         {isActive &&  <input type='test' placeholder='SEARCH' onChange={(event) => setSearchFilter(event.target.value)}/>} 
@@ -48,6 +49,7 @@ const RenderMovies = () => {
         <section className='card-layout'>
         
             <MovieCards filteredMovies={filteredMovies} /> 
+            
         
         </section>
 
