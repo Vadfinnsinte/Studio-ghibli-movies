@@ -15,10 +15,12 @@ header {
 
 }
 .favorite{
+    text-decoration: none;
     margin-bottom: 0.4em;
     margin-top: 0.1em;
     cursor: pointer;
     font-size: larger;
+    color: rgb(115, 115, 190);
 }
 
 .get-search {
@@ -50,7 +52,7 @@ header {
     gap: 1.5em;
     margin-top: 1em;
 
-    
+    /* testa med min max och auto  */
     @media (max-width: 600px) {
         grid-template-columns:  1fr;
         

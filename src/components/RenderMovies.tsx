@@ -1,17 +1,23 @@
 
 import { useState } from 'react'
 
-import { getMovies } from './data/getMovies'
-import { apiData } from './models/apiModel'
-
+import { getMovies } from '../data/getMovies'
+import { apiData } from '../models/apiModel'
+import MovieCards from './MovieCards'
+import { NavLink } from 'react-router-dom'
+import { useVaribleStore } from '../data/store'
 
 
 const RenderMovies = () => {
-    const [movies, setMovies] = useState<apiData[]>([])
+
+    const {setMovies, movies} = useVaribleStore((state) => ({setMovies: state.setMovies,
+        movies: state.movies
+    }))
+
     const [errorMessage,setErrorMessage] = useState<string>("")
     const [searchFilter, setSearchFilter] = useState<string>('')
     const [isActive, setIsActive] = useState<boolean>(false)
-    const [isFavorite, setIsFavorite] = useState<boolean>(false)
+   
     
     const handleGetMovies = async () => {
         try {
@@ -33,25 +39,16 @@ const RenderMovies = () => {
         <>
         <div className='get-search'>
         <button onClick={handleGetMovies} >Get movies!</button>
-        <p className='favorite'> My favorites 💜</p>
-        {errorMessage && (
-					<p> {errorMessage} </p>
-				)}
-     { isActive &&  <input type='test' placeholder='SEARCH' onChange={(event) => setSearchFilter(event.target.value)}/>} 
+        <NavLink className='favorite' to="/favorites"> My favorites 💜 </NavLink>
+        {/* <p className='favorite'> My favorites 💜</p> */}
+
+        {errorMessage && (<p> {errorMessage} </p>)}
+        {isActive &&  <input type='test' placeholder='SEARCH' onChange={(event) => setSearchFilter(event.target.value)}/>} 
         </div>
         <section className='card-layout'>
-        {movies && filteredMovies.map((movie) => 
-            <div className='movie-card' key={movie.id}>
-                {isFavorite ? (<p className='favorite'>💜</p>): (<p className='favorite'>🖤</p>)}
-            
-            <h2>{movie.title}</h2>
-            <p className='small-p'>Directed by:</p>
-            <h3>{movie.director}</h3>
-            <p>{movie.release_date}</p>
-            <img src={movie.image} alt='picture of movie-cover'/>
-            <p>{movie.description}</p>
-            </div>
-        )}
+        
+            <MovieCards filteredMovies={filteredMovies} /> 
+        
         </section>
 
         </>

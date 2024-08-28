@@ -4,6 +4,7 @@ export interface apiData {
     image: string,
     title: string,
     director: string,
-    release_date: string
+    release_date: string,
+    isFavorite: boolean
 }
 

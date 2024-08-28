@@ -1,5 +1,6 @@
+import { Outlet } from 'react-router-dom'
 import './App.css'
-import RenderMovies from './RenderMovies'
+import RenderMovies from './components/RenderMovies'
 
 
 function App() {
@@ -8,9 +9,7 @@ function App() {
 
   return (
     <>
-      <header>
-          <h1>Studio Ghibli Movies!</h1>
-      </header>
+
       <main>
       <RenderMovies />
       </main>
