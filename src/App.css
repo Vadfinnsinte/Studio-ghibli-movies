@@ -102,3 +102,11 @@ header {
     margin-top: 0.2em;
     font-size: 12px;
 }
+
+.have-seen {
+    
+    align-self: flex-start;
+    display: flex;
+
+
+}

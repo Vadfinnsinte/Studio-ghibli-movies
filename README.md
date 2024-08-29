@@ -26,7 +26,7 @@ Din uppgift är att bygga en frontend-app där man kan läsa om filmer av Studio
 
 7. För varje film ska visas: engelsk titel, beskrivning, minst en trevlig bild, regissör.✔️
 
-8. Användare ska kunna "favoritmarkera" filmer. Markerade filmer kan visas i en separat vy som kallas "favoriter".
+8. Användare ska kunna "favoritmarkera" filmer. Markerade filmer kan visas i en separat vy som kallas "favoriter". ✔️
 
 9. Användare kan ändra ordningen på filmer i favorit-vyn.
 

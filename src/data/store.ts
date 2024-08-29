@@ -27,12 +27,16 @@ const useVaribleStore = create<MovieStore>((set) => ({
                     mov.title === updatedMovie.title ? updatedMovie : mov
                 )
                
-                
-                
             }
         }
         return state
-    })
+    }),
+    isActive: false,
+    setIsActive: () => set (
+        {
+            isActive: true
+        }
+    )
 
 }))
 

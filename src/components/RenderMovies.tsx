@@ -6,25 +6,24 @@ import { apiData } from '../models/apiModel'
 import MovieCards from './MovieCards'
 import { NavLink } from 'react-router-dom'
 import { useVaribleStore } from '../data/store'
-import Favorites from './Favorites'
 
 
 const RenderMovies = () => {
 
-    const {setMovies, movies} = useVaribleStore((state) => ({setMovies: state.setMovies,
-        movies: state.movies
+    const {setMovies, movies, isActive, setIsActive} = useVaribleStore((state) => ({setMovies: state.setMovies,
+        movies: state.movies,
+        isActive: state.isActive,
+        setIsActive: state.setIsActive
+        
     }))
-
     const [errorMessage,setErrorMessage] = useState<string>("")
     const [searchFilter, setSearchFilter] = useState<string>('')
-    const [isActive, setIsActive] = useState<boolean>(false)
-   
     
     const handleGetMovies = async () => {
         try {
             const movieData = await getMovies()
             setMovies(movieData)
-            setIsActive(true)
+            setIsActive()
         }
         catch {
             setErrorMessage("something went wrong, please try again later!")
