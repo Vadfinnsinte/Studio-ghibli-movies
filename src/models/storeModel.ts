@@ -8,7 +8,8 @@ export interface MovieStore {
     // setFavorites: any,
     isActive: boolean,
     setIsActive: () => void
-   
+    haveSeen: {[key: string] : boolean}, 
+    setHaveSeen: (movieId: string) => void
 
      
 }

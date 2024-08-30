@@ -30,4 +30,4 @@ Din uppgift är att bygga en frontend-app där man kan läsa om filmer av Studio
 
 9. Användare kan ändra ordningen på filmer i favorit-vyn.
 
-10. Användare kan toggla om man har sett en film i favorit-vyn eller inte.
+10. Användare kan toggla om man har sett en film i favorit-vyn eller inte.✔️

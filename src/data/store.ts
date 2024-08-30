@@ -51,6 +51,15 @@ const useVaribleStore = create<MovieStore>((set) => ({
             isActive: true
         }
     ),
+    haveSeen: {},
+    setHaveSeen: (movieId) =>
+    set((state) => ({
+      haveSeen: {
+        ...state.haveSeen,
+        [movieId]: !state.haveSeen[movieId],
+      },
+    })),
+
 
 }))
 
