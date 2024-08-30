@@ -17,8 +17,8 @@ const Favorites = () => {
     return (
         <>
         <div className='get-search'>
-        <NavLink to="/" className='favorite'  >Back to Movies</NavLink>
-        <h1>Your favorite movies: </h1>
+        <NavLink to="/" className='favorite'  >Back to Movies 🎥 </NavLink>
+        <h1>Your favorites 💜</h1>
 
 
         </div>
