@@ -29,14 +29,28 @@ const useVaribleStore = create<MovieStore>((set) => ({
                
             }
         }
+        else if(isFavMovie) {
+            const updatedMovie = { ...isFavMovie, isFavorite: false };
+            return {
+                favorites: state.favorites.filter(
+                    (fav) => fav.title !== updatedMovie.title
+                ),
+                movies: state.movies.map((mov) =>
+                    mov.title === updatedMovie.title ? updatedMovie : mov
+                ),
+               
+            }
+        }
         return state
     }),
+
+
     isActive: false,
     setIsActive: () => set (
         {
             isActive: true
         }
-    )
+    ),
 
 }))
 

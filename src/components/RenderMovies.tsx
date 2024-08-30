@@ -6,6 +6,7 @@ import { apiData } from '../models/apiModel'
 import MovieCards from './MovieCards'
 import { NavLink } from 'react-router-dom'
 import { useVaribleStore } from '../data/store'
+import { validateMovies } from '../data/validate'
 
 
 const RenderMovies = () => {
@@ -21,9 +22,16 @@ const RenderMovies = () => {
     
     const handleGetMovies = async () => {
         try {
-            const movieData = await getMovies()
-            setMovies(movieData)
+            // const movieData = await getMovies()
+            // setMovies(movieData)
+            const reuslt = validateMovies(await getMovies())
             setIsActive()
+            if (reuslt.success) {
+                setMovies(reuslt.value)
+            }else {
+                setErrorMessage(reuslt.error)
+            }
+
         }
         catch {
             setErrorMessage("something went wrong, please try again later!")

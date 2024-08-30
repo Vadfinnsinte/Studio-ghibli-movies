@@ -16,7 +16,7 @@ Din uppgift är att bygga en frontend-app där man kan läsa om filmer av Studio
   B: samtliga funktioner: parametrar och returtyp ✔️
   C: type alias som beskriver datan från API:et ✔️(men kolla om interface är ok.)
 
-3. Datan valideras med Joi (gås igenom på onsdag)
+3. Datan valideras med Joi (gås igenom på onsdag) ✔️
 
 4. Användare ska kunna söka efter filmer baserat på deras engelska titel.(Sökning sker i den hämtade datan, inte genom nya API-anrop) ✔️
 

@@ -5,7 +5,10 @@ import { useVaribleStore } from "../data/store"
 
 const Favorites = () => {
 
-const  favorites = useVaribleStore(state => state.favorites)
+    const {setFavorites, favorites} = useVaribleStore((state) => ({
+        setFavorites: state.setFavorites,
+        favorites: state.favorites,
+    }))
 
 
 
@@ -22,9 +25,11 @@ const  favorites = useVaribleStore(state => state.favorites)
 
         {favorites && favorites.map((movie) =>
             <div className='movie-card' key={movie.id}>
+
                 <div className="have-seen">
                 <input type="checkbox" className="checkbox"/>
-                <p>Have seen</p>
+                <p className="seen">Have seen</p>
+                {movie.isFavorite ? (<p onClick={() =>setFavorites(movie)} className='favoriteF'  >💜</p>): (<p className='favorite'  onClick={() =>setFavorites(movie)} >🖤</p>)}
 
                 </div>
             <h2>{movie.title}</h2>

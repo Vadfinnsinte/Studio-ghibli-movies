@@ -104,9 +104,15 @@ header {
 }
 
 .have-seen {
-    
     align-self: flex-start;
     display: flex;
+    width: 100%;
+    justify-content: space-between;
+        .seen {
+            margin-right: auto;
+        }
+}
 
-
+.favoriteF {
+    cursor: pointer;
 }

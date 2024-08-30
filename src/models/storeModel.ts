@@ -5,8 +5,10 @@ export interface MovieStore {
     setMovies: (result : apiData[]) => void, 
     favorites: apiData[],
     setFavorites: (movie: apiData) => void
+    // setFavorites: any,
     isActive: boolean,
     setIsActive: () => void
+   
 
      
 }
