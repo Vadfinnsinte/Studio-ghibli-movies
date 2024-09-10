@@ -59,7 +59,7 @@ const useVaribleStore = create<MovieStore>((set) => ({
         [movieId]: !state.haveSeen[movieId],
       },
     })),
-
+ 
 
 }))
 

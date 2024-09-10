@@ -36,10 +36,11 @@ const RenderMovies = () => {
         catch {
             setErrorMessage("something went wrong, please try again later!")
         }
+     
+        
     }
     
     const filteredMovies: apiData[] = movies.filter(movie => movie.title.toLowerCase().includes(searchFilter.toLowerCase())).sort((a, b) => parseInt(b.release_date) - parseInt(a.release_date))
-    
 
     
     return (

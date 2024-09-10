@@ -28,6 +28,4 @@ Din uppgift är att bygga en frontend-app där man kan läsa om filmer av Studio
 
 8. Användare ska kunna "favoritmarkera" filmer. Markerade filmer kan visas i en separat vy som kallas "favoriter". ✔️
 
-9. Användare kan ändra ordningen på filmer i favorit-vyn.
-
-10. Användare kan toggla om man har sett en film i favorit-vyn eller inte.✔️
+9. Användare kan toggla om man har sett en film i favorit-vyn eller inte.✔️
